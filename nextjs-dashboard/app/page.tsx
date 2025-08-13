@@ -45,16 +45,23 @@ export default function Page() {
           </Link>
         </div>
 
-        <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+        <div className="flex flex-col items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
+          <p className="hidden md:block p-2 font-medium">Desktop</p>
           <Image
             src="/hero-desktop.png"
             width={1000}
             height={760}
-            className="hidden md:block"
+            className="hidden md:block border-4 border-lime-600 border-dotted"
             alt="Screenshots of the dashboard project showing desktop version"
           />
+          <Image
+            src="/hero-mobile.png"
+            width={560}
+            height={620}
+            className="block md:hidden border-4 border-indigo-600 border-dotted"
+            alt="Screenshot of the dashboard project showing mobile version"
+          />
         </div>
-
       </div>
 
 
