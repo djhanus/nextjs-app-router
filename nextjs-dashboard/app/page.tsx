@@ -6,6 +6,9 @@ import { robotoMono } from '@/app/ui/fonts';
 import { lusitana } from '@/app/ui/fonts';
 import Image from 'next/image';
 
+// root app dir '/' effectively
+// sub app dir '/app/page/'
+
 export default function Page() {
   return (
 
