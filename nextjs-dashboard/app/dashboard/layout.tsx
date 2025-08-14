@@ -1,5 +1,7 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
 
+// That's right, the layout file is the best way to create a shared layout that all pages in your application can use.
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
