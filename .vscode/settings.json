@@ -17,7 +17,7 @@
   "files.autoSave": "afterDelay",
   "screencastMode.onlyKeyboardShortcuts": true,
   "terminal.integrated.fontSize": 11,
-  "workbench.colorTheme": "Tron Legacy Theme Light",
+  "workbench.colorTheme": "City Lights",
   "workbench.fontAliasing": "antialiased",
   "workbench.statusBar.visible": true,
   "liveServer.settings.root": "/docs",

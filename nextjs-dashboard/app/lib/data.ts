@@ -23,6 +23,8 @@ export async function fetchRevenue() {
 
     // console.log('Data fetch completed after 3 seconds.');
 
+    // console.log(data);
+
     return data;
   } catch (error) {
     console.error('Database Error:', error);

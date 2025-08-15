@@ -54,14 +54,14 @@ export default function Page() {
             src="/hero-desktop.png"
             width={1000}
             height={760}
-            className="hidden md:block border-4 border-lime-600 border-dotted"
+            className="hidden md:block"
             alt="Screenshots of the dashboard project showing desktop version"
           />
           <Image
             src="/hero-mobile.png"
             width={560}
             height={620}
-            className="block md:hidden border-4 border-indigo-600 border-dotted"
+            className="block md:hidden"
             alt="Screenshot of the dashboard project showing mobile version"
           />
         </div>

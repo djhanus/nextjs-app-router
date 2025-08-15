@@ -1,34 +1,42 @@
-// Dashboard Page Component
+import { Card } from '@/app/ui/dashboard/cards';
+import RevenueChart from '@/app/ui/dashboard/revenue-chart';
+import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
+import { lusitana } from '@/app/ui/fonts';
+import {
+  fetchRevenue,
+  fetchLatestInvoices,
+  fetchCardData,
+} from '@/app/lib/data';
 
-// (optional) boilerplate
-import React from 'react';
 
-// You can add metadata for SEO or page settings (Next.js 13+)
-export const metadata = {
-  title: 'Dashboard',
-  description: 'Your dashboard overview page.',
-};
-
-// Main Dashboard Page Component
-export default function Page() {
-  // Example state or hooks can be added here
-  // const [count, setCount] = React.useState(0);
-
+export default async function Page() {
+  const revenue = await fetchRevenue();
+  const latestInvoices = await fetchLatestInvoices();
+  const {
+    numberOfInvoices,
+    numberOfCustomers,
+    totalPaidInvoices,
+    totalPendingInvoices,
+  } = await fetchCardData();
   return (
     <main>
-      {/* Page Heading */}
-      <h1>Dashboard</h1>
-
-      {/* Page Description */}
-      <p>Welcome to your dashboard page.</p>
-
-      {/* Example: Add more boilerplate elements */}
-      {/* <button onClick={() => setCount(count + 1)}>Click Me</button> */}
-
-      {/* Placeholder for future dashboard widgets */}
-      <section>
-        {/* Widgets will go here */}
-      </section>
+      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
+        Dashboard
+      </h1>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Card title="Collected" value={totalPaidInvoices} type="collected" />
+        <Card title="Pending" value={totalPendingInvoices} type="pending" />
+        <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+        <Card
+          title="Total Customers"
+          value={numberOfCustomers}
+          type="customers"
+        />
+      </div>
+      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
+        <RevenueChart revenue={revenue} />
+        <LatestInvoices latestInvoices={latestInvoices} />
+      </div>
     </main>
   );
 }
